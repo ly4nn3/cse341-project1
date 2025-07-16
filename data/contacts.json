@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Vanessa",
+        "lastName": "Teh",
+        "email": "van.teh@gmail.com",
+        "favoriteColor": "Black",
+        "birthday": { "$date": "1997-11-12T00:00:00.000Z"}
+    },
+    {
+        "firstName": "Rift",
+        "lastName": "Dea",
+        "email": "riftdea@gmailcom",
+        "favoriteColor": "Blue",
+        "birthday": { "$date": "1997-06-16T00:00:00.000Z"}
+    },
+    {
+        "firstName": "Julia",
+        "lastName": "Lee",
+        "email": "julia.196424@gmail.com",
+        "favoriteColor": "",
+        "birthday": { "$date": "1964-11-12T00:00:00.000Z"}
+    }
+]
