@@ -1,0 +1,442 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "API for managing contacts collection",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Hello World"
+        ],
+        "summary": "Hello World Route",
+        "description": "Default route that returns a Hello World message.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/contacts/": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get all contacts",
+        "description": "Returns a list of all contacts from collection.",
+        "responses": {
+          "200": {
+            "description": "List of contacts retrieved successfully",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string",
+                    "example": "60c72b2f9b1e8b001c8e4d3a"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "example": "1997-08-25T00:00:00.000Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Create a new contact",
+        "description": "Creates a new contact in the collection.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Contact data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "example@email.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1997-08-25T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Contact created successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string",
+                  "example": "60c72b2f9b1e8b001c8e4d3a"
+                },
+                "firstName": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1997-08-25T00:00:00.000Z"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get a single contact",
+        "description": "Returns a contact from the collection by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ObjectId (24 character hex string)",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact retrieved successfully",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string",
+                    "example": "60c72b2f9b1e8b001c8e4d3a"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "string"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "example": "1997-08-25T00:00:00.000Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Contact not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Contact not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Update a contact",
+        "description": "Updates an existing contact in the collection by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ObjectId (24 character hex string)",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated contact data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Jane"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "updated.example@email.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Red"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1997-08-25T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact updated successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string",
+                  "example": "60c72b2f9b1e8b001c8e4d3a"
+                },
+                "firstName": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1997-08-25T00:00:00.000Z"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "404": {
+            "description": "Contact not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Contact not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Delete a contact",
+        "description": "Deletes a contact from the collection by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Contact ObjectId (24 character hex string)",
+            "example": "60c72b2f9b1e8b001c8e4d3a"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Contact deleted successfully (no content is returned)"
+          },
+          "404": {
+            "description": "Contact not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Contact not found"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "string"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 ### Get all contacts
-GET https://cse341-project1-zbnf.onrender.com/contacts
+GET http://localhost:3000/contacts
 
 ### Get a contact by ID
-GET https://cse341-project1-zbnf.onrender.com/contacts/68772bf1c6e6bfec174cfc22
+GET http://localhost:3000/contacts/68772bf1c6e6bfec174cfc22
 
 ### Create a new contact
-POST https://cse341-project1-zbnf.onrender.com/contacts
+POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### Update contact by ID
-PUT https://cse341-project1-zbnf.onrender.com/contacts/pasteidhere
+PUT http://localhost:3000/contacts/pasteidhere
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 }
 
 ### Delete contact by ID
-DELETE https://cse341-project1-zbnf.onrender.com/contacts/pasteidhere
+DELETE http://localhost:3000/contacts/pasteidhere
